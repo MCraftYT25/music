@@ -1,0 +1,118 @@
+:root {
+    --main-color: rgb(253,217,141);
+    --second-color: #333;
+    --bg-color: rgb(253,217,141);
+    --font-color: black;
+    --font-2nd-color: #f2a86f;
+}
+/*-------------------------------------------------------------*/
+.switch {
+    position: absolute;
+    right: 1vw;
+    top: 1.8vh;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--main-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: rgb(253,217,141);
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--main-color);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+@media screen and (min-width: 200px) {
+    #mobile-widgets {
+        visibility: visible;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        border-top-left-radius: 1vw;
+        border-top-right-radius: 1vw;
+        background-color: var(--main-color);
+        color: var(--font-color);
+    }
+    #mobile-widgets a {
+        padding: 0.5em;
+        background-color: var(--main-color);
+        text-decoration: none;
+        color: var(--font-color);
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1050px) {
+    #mobile-widgets {
+        visibility: hidden;
+    }
+}
+/*-------------------------------------------------------------*/
+.searchmusic {
+    display: flex;
+    flex-direction: column;
+}
+.searchmusic input {
+    padding: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 2vh;
+    background-color: var(--bg-color);
+    font-weight: bold;
+    font-family: 'Ubuntu';
+    border: 0;
+}
+.convertdesc {
+    margin-bottom: 1vh;
+}
+h3 {
+    padding: 1vh;
+    font-size: 2em;
+}
+.playlist {
+    background-color: var(--bg-color);
+    padding: 1vh;
+    border-radius: 1vh;
+    margin-bottom: 1vh;
+}
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/
+/*-------------------------------------------------------------*/

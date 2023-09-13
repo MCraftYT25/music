@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/second-style.css">
+    <title>VSKY.GG</title>
+</head>
+<body>
+    <header>
+        <h1>MUSIC</h1>
+        <label class="switch">
+            <input onclick="chgcolor();" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </header>
+    <nav id="menu"> 
+        <a href="index.html">HOME</a>
+        <a href="">UPDATE</a>
+    </nav>
+    <main>
+        <div id="content">
+            <h2>Latest: 2023-09-08</h2>
+            <div id="V1.1" class="update">
+                <div class="w40">
+                    <p class="version bold">Version V1.1 "Music"</p>
+                    <p class="date grey">2023-09-13</p>
+                </div>
+                <div class="w60">
+                    <p class="green bold">+ github website 1.1</p>
+                    <p class="green bold">+ music [PC, iOS, Android]</p>
+                    <p class="green bold">+ Files: update.html</p>
+                    <p class="red bold">- github website 1.0</p>
+                </div>
+            </div>
+            <div id="V1.0" class="update">
+                <div class="w40">
+                    <p class="version bold">Version V1.0 "Alpha"</p>
+                    <p class="date grey">2023-09-08</p>
+                </div>
+                <div class="w60">
+                    <p class="green bold">+ github website 1.0</p>
+                    <p class="green bold">+ Dark Mode</p>
+                    <p class="green bold">+ "MENU" Mobile widget</p>
+                    <p class="green bold">+ UPDATE FUNCTION FROM web-ang</p>
+                    <p class="green bold">+ Folders: JS, CSS, files, pages</p>
+                    <p class="green bold">+ Files: style.css, index.html, main-script.js, second-style.css</p>
+                </div>
+            </div>
+            <div id="stats">
+                <div class="stats"></div>
+                <div class="stats"></div>
+                <div class="stats"></div>
+                <div class="stats"></div>
+                <div class="stats"></div>
+                <div class="stats"></div>
+            </div>
+        </div>
+    </main>
+    <div id="mobile-widgets"><a id="gomenu" href="#menu">Menu</a></div>
+    <footer id="footer">
+        <p>VSKY.GG</p>
+    </footer>
+    <script src="JS/main-script.js"></script>
+<script>
+function days(d1, d2)
+    {
+        t2 = d2.getTime();
+        t1 = d1.getTime();
+        return parseInt((t2-t1)/(24*3600*1000));
+    }
+    
+    document.getElementsByTagName('h2')[0].innerHTML = '<p>Latest: <mark class="darkgreen">' + document.querySelector('.date').innerText + '</mark></p>';
+
+    let d1 = new Date("September, 8, 2023");
+    let d2 = new Date();
+    
+    let lastupdate = document.querySelector('.date').innerText;
+    let d3 = new Date(lastupdate);
+    document.getElementsByClassName('stats')[0].innerHTML = '<p>Total project time: </p><p class="value"><mark class="blue">' + days(d1, d2) + " days</mark></p>";
+    let liczba = document.getElementsByClassName('date');
+    if(days(d3, d2) < 10)
+    {
+        if(days(d3, d2) == 0)
+        {
+            document.getElementsByClassName('stats')[1].innerHTML = '<p>Latest Update: </p><p class="value"><mark class="green">today</mark></p>';
+        } else {
+            document.getElementsByClassName('stats')[1].innerHTML = '<p>Latest Update: </p><p class="value"><mark class="green">' + days(d3, d2) + ' days ago</mark></p>';
+        }
+    } else {
+        document.getElementsByClassName('stats')[1].innerHTML = '<p>Latest Update: </p><p class="value"><mark class="red">' + days(d3, d2) + ' days ago</mark></p>';
+    }
+    document.getElementsByClassName('stats')[2].innerHTML = '<p>Latest Version: </p><p class="value"><mark class="green">' + document.querySelector('.version').innerText + '</mark></p>';
+    document.getElementsByClassName('stats')[3].innerHTML = '<p>Days/Update: </p><p class="value"><mark class="green">' + Math.round((days(d1, d2)) / liczba.length) + '</mark></p>';
+    document.getElementsByClassName('stats')[4].innerHTML = '<p>Updates count: </p><p class="value"><mark class="green">' + liczba.length + '</mark></p>';
+    let d4 = new Date("2024-01-01");
+    document.getElementsByClassName('stats')[5].innerHTML = '<p>Time until the 2024: </p><p class="value"><mark class="green">' + days(d2, d4) + ' days</mark></p>';       
+</script>
+</body>
+</html>

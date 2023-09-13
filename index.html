@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/second-style.css">
+    <title>VSKY.GG</title>
+</head>
+<body>
+    <header>
+        <h1>MUSIC</h1>
+        <label class="switch">
+            <input onclick="chgcolor();" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </header>
+    <nav id="menu"> 
+        <a href="">HOME</a>
+        <a href="update.html">UPDATE</a>
+    </nav>
+    <main>
+        <div id="content">
+            <div class="section">
+                <h3>👑Deutsch Rap👑</h3>
+                <iframe width="100%" height="60%" src="https://www.youtube.com/embed/SoImFhORKpg?list=PLjZpirdJfetWQT_HrjF-J9Oh6ABtCiqqR" title="Bonez MC &amp; RAF Camora feat. Gzuz &amp; Maxwell - Kontrollieren (prod. by Beataura &amp; RAF Camora)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <h3>👑Italiano👑</h3>
+                <iframe width="100%" height="60%" src="https://www.youtube.com/embed/w6ubNUVTcSY?list=PLjZpirdJfetXD2yBRd444h2o6yb1kjp4C" title="Bonez MC &amp; RAF Camora feat. Gzuz &amp; Maxwell - Kontrollieren (prod. by Beataura &amp; RAF Camora)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <h3>👑Dark👑</h3>
+                <iframe width="100%" height="60%" src="https://www.youtube.com/embed/WUEVJ0N6I1A?list=PLjZpirdJfetU7p5iBvMsMPNuIfqVarW5o" title="Bonez MC &amp; RAF Camora feat. Gzuz &amp; Maxwell - Kontrollieren (prod. by Beataura &amp; RAF Camora)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <h3>Enter your playlist & first video (Mobile)</h3>
+                <form class="searchmusic" onsubmit="searchmusic(); return false;">
+                    <input id="playlist" class="searchbox" type="text" placeholder="Enter your playlist">
+                    <input id="video" class="searchbox" type="text" placeholder="Enter First Video on your playlist">
+                    <input class="submit" type="submit" value="Search">
+                </form>
+                <h3>Enter your video (PC)</h3>
+                <form class="searchmusic" onsubmit="searchmusicpc(); return false;">
+                    <input id="searchbox" class="searchbox" type="text" placeholder="Enter your video">
+                    <input class="submit" type="submit" value="Search">
+                </form>
+                <div id="searchresult">
+                    <p class="convertdesc"><mark class="black bold">(MOBILE)</mark> Wprowadź link do swojej playlisty, następnie link do pierwszego lub kolejnego filmu z tej playlisty. <mark class="red bold">Wymagane są dwa linki. Playlista nie może być prywatna.</mark></p>
+                    <p class="convertdesc"><mark class="black bold">(PC)</mark> Wprowadź link do swojego filmu lub filmu z playlisty. <mark class="red bold">Link do playlisty nie jest obsługiwany. Playlista nie może być prywatna.</mark></p>
+                </div>
+                <div class="playlists-container">
+                    <div class="playlist">
+                        <p class="bold">Unnormal (PC)</p>
+                        <p>https://youtu.be/bEeV6EtUYd0?list=PLjZpirdJfetWQT_HrjF-J9Oh6ABtCiqqR</p>
+                    </div>
+                    <div class="playlist">
+                        <p class="bold">Unnormal (PC)</p>
+                        <p>https://youtu.be/bEeV6EtUYd0?list=PLjZpirdJfetWQT_HrjF-J9Oh6ABtCiqqR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="mobile-widgets"><a id="gomenu" href="#menu">Menu</a></div>
+    <footer id="footer">
+        <p>VSKY.GG</p>
+    </footer>
+    <script src="JS/main-script.js"></script>
+<script>
+    function searchmusic()
+    {
+        let playlist = document.getElementById('playlist').value;
+        playlist = playlist.replace("https://youtube.com/playlist?", "?");
+        let video = document.getElementById('video').value;
+        video = video.replace("https://youtu.be/", "/");
+        link = video + playlist;
+        document.getElementById('searchresult').innerHTML = '<h3>Your Playlist</h3><iframe width="100%" height="60%" src="https://www.youtube.com/embed' + link + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    }
+    function searchmusicpc()
+    {
+        let link = document.getElementById('searchbox').value;
+        link = link.replace("https://youtu.be/", "/");
+        document.getElementById('searchresult').innerHTML = '<h3>Your Playlist</h3><iframe width="100%" height="60%" src="https://www.youtube.com/embed' + link + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    }
+</script>
+</body>
+</html>
